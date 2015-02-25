@@ -12,9 +12,10 @@ import os
 import subprocess
 import requests
 import tempfile
+import threading
 
-from . import bin_dep
-from . import vlc
+import bin_dep
+import vlc
 
 
 SUPPORTED_LANGUAGES = ("af", "ar", "az", "be", "bg", "bn", "ca", "cs",
