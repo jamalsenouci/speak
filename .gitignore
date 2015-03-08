@@ -6,7 +6,7 @@ __pycache__/
 *.so
 
 #IDE Config Files
-.idea/
+.idea/**/*
 
 # Distribution / packaging
 .Python
