@@ -17,9 +17,13 @@ _SUPPORTED_LANGUAGES = ("af", "ar", "az", "be", "bg", "bn", "ca", "cs",
                        "tl", "tr", "uk", "ur", "vi", "yi", "zh-CN", "zh-TW")
 
 # check deps
-import shutil as _shutil
-if _shutil.which('vlc') is None:
-    raise RuntimeError("vlc binary could not be found")
+import sys
+if sys.version_info[:2] >= (3, 3):
+	import shutil
+	if shutil.which('vlc') is None:
+    	raise RuntimeError("vlc binary could not be found")
+del sys
+
 
 __all__=['speak']
 
