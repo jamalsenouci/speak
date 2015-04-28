@@ -1,5 +1,6 @@
 from nose.tools import *
 import unittest
+import os
 import speak
 
 def is_internet_reachable():
@@ -14,4 +15,10 @@ def is_internet_reachable():
 
 class TestSpeech():
     def test_download(self):
-        assert_equal
+      """ Download some reference speeches. """
+      speeches = ("Hello", "Bonjour.")
+      for lang, speech in zip(("en", "fr"), speeches):
+          tempfile = speak._Speech().download(speech, lang)
+          assert(os.path.exists(tempfile))
+
+

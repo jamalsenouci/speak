@@ -13,8 +13,8 @@ def run(verbosity=1,doctest=False):
         import nose
     except ImportError:
         raise ImportError(\
-            "The nose package is needed to run the NetworkX tests.")
-    sys.stderr.write("Running NetworkX tests:")
+            "The nose package is needed to run the Speak tests.")
+    sys.stderr.write("Running Speak tests:")
     install_dir = path.join(path.dirname(__file__), path.pardir)
     if getcwd() == path.abspath(path.join(install_dir,path.pardir)):
         raise RuntimeError("Can't run tests from source directory.\n"
