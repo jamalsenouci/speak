@@ -8,7 +8,7 @@ Influenced by Desmba/GoogleSpeech but intended for voice notifications on comple
 
 ####From PyPI (with PIP)
 1. Ensure vlc is in your path
-2. run `pip install speak`
+2. run `pip install git+https://github.com/jamalsenouci/speak.git`
 
 ####From source
 1. Ensure vlc is in your path
@@ -23,10 +23,6 @@ Influenced by Desmba/GoogleSpeech but intended for voice notifications on comple
 
 #####Command line usage
 speak [command]
-
-##Plans
-* Expand functionality to provide updates on weather, news etc
-* Experiment with nlp to make speak smarter
 
 ##Dependencies: 
 * [Vlc media player](http://www.videolan.org/vlc/), (vlc executable directory must be in path)
