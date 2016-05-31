@@ -21,7 +21,8 @@ import sys
 if sys.version_info[:2] >= (3, 3):
     import shutil
     if shutil.which('vlc') is None:
-        raise RuntimeError("vlc binary could not be found")
+        if shutil.which('vlc.exe') is None:
+            raise RuntimeError("vlc binary could not be found")
 del sys
 
 
@@ -32,7 +33,7 @@ class _Speech:
     """ Text segment to be read. """
 
     def __init__(self, text, lang):
-        self.base_url = "http://translate.google.com/translate_tts"
+        self.base_url = "http://api.voicerss.org/"
         self.text = text
         self.lang = lang
 
@@ -53,10 +54,10 @@ class _Speech:
         import requests
         import tempfile
         params = {}
-        params["ie"] = "UTF-8"
-        params["textlen"] = str(len(self.text))
-        params["tl"] = self.lang
-        params["q"] = self.text.lower()
+        params["key"] = "269fbb08fd884dfe9444bbf96bbef639"
+        params["hl"] = self.lang
+        params["src"] = self.text.lower()
+        params["c"] = "MP3"
         temp = tempfile.NamedTemporaryFile(suffix='.mp3', delete=False)
         req = requests.get(self.base_url, params=params)
         with open(temp.name, "wb") as file:
@@ -74,7 +75,7 @@ class _Speech:
         player.play();
 
 
-def speak(text, lang="en"):
+def speak(text, lang="en-gb"):
     """Converts Text to Speech. """
     speech = _Speech(text, lang)
     speech._clean()
