@@ -18,7 +18,7 @@ class TestSpeech():
       """ Download some reference speeches. """
       speeches = ("Hello", "Bonjour.")
       for lang, speech in zip(("en", "fr"), speeches):
-          tempfile = speak._Speech().download(speech, lang)
+          tempfile = speak._Speech(speech, lang)._download()
           assert(os.path.exists(tempfile))
 
 
