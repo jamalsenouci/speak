@@ -1,12 +1,13 @@
 language: python
+os:
+  - linux
+  - osx
 python:
   - "3.3"
   - "2.7"
   - "2.6"
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install vlc
-  - export PATH=$PATH:usr/bin/vlc/
+  - ./.travis/preinstall.sh
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: 
   - pip install requests
