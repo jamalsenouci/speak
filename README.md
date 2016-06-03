@@ -1,4 +1,6 @@
-# Speak
+# Speak 
+
+[![Build Status](https://travis-ci.org/jamalsenouci/speak.svg?branch=master)](https://travis-ci.org/jamalsenouci/speak)
 
 A Python package for creating voice notifications
 
