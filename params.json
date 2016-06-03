@@ -1,0 +1,6 @@
+{
+  "name": "Speak",
+  "tagline": "A Python package for creating voice notifications",
+  "body": "### What does the package do?\r\nIt's a tool for creating voice notifications\r\n\r\n### How does it work\r\nIt takes a text input, passes it to a text-to-speech api downloads it as a temporary file then uses the vlc command line tools to play the audio file.\r\n\r\n## Installing the package\r\n`speak` depends on [vlc](http://www.videolan.org/vlc/) being in the path.\r\nTo install `speak`, type the following commands into a command line:\r\n\r\n       pip install git+https://github.com/jamalsenouci/speak.git\r\n\r\n## Using the package interactively\r\n\r\n      from speak import speak\r\n      speak(\"hello world\")\r\n\r\n### Using the package from the command line\r\n\r\n    speak(\"sleep 4\")\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
